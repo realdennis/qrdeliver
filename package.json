@@ -1,18 +1,31 @@
 {
   "name": "qrdeliver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "realdennis",
+  "license": "MIT",
   "bin": {
-    "qrdeliver": "./index.js"
+    "qrdeliver": "./index.js",
+    "qrd":"./index.js"
   },
-  "description": "",
+  "description": "Make your file be a QR code that mobile device can open/download it by scanning . ",
   "dependencies": {
     "ip": "^1.1.5",
     "qrcode-terminal": "^0.12.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realdennis/qrdeliver.git"
+  },
+  "keywords": [
+    "qrcode"
+  ],
+  "bugs": {
+    "url": "https://github.com/realdennis/qrdeliver/issues"
+  },
+  "homepage": "https://github.com/realdennis/qrdeliver#readme"
 }
