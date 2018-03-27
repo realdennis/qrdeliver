@@ -9,12 +9,13 @@ let port = 9615
 function createServer(){
     http.createServer((req,res) => {
         res.writeHead(200);
-        res.end(fs.readFileSync('./' + req.url));
+//        console.log(decodeURI(req.url));
+        res.end(fs.readFileSync('./' + decodeURI(req.url)));
     }).listen(port)
 }
 
 if(process.argv[2]!=undefined){
-    something = 'http://'+ip.address()+':'+port+'/'+process.argv[2]; 
+    something = 'http://'+ip.address()+':'+port+'/'+encodeURI(process.argv[2]); 
     createServer();
     qrcode.generate(something);
 }else{
