@@ -17,7 +17,7 @@ function createServer(){
 if(process.argv[2]!=undefined){
     something = 'http://'+ip.address()+':'+port+'/'+encodeURI(process.argv[2]); 
     createServer();
-    qrcode.generate(something);
+    qrcode.generate(something,{small:true});
 }else{
     console.log('usage:')
     console.log('       qrfile [file ..]       make your file be a qrcode(link) ')

@@ -1,6 +1,6 @@
 {
   "name": "qrdeliver",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,7 @@
   "license": "MIT",
   "bin": {
     "qrdeliver": "./index.js",
-    "qrd":"./index.js"
+    "qrd": "./index.js"
   },
   "description": "Make your file be a QR code that mobile device can open/download it by scanning . ",
   "dependencies": {
