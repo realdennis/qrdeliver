@@ -13,7 +13,7 @@ if(process.argv[3]=='-p'){
 function createServer(){
     http.createServer((req,res) => {
         res.writeHead(200);
-//        console.log(decodeURI(req.url));
+        console.log(decodeURI(req.url));
         try{
             res.end(fs.readFileSync(process.cwd()+decodeURI(req.url)));
         }catch(err){
@@ -23,7 +23,14 @@ function createServer(){
 }
 
 if(process.argv[2]!=undefined){
-    something = 'http://'+ip.address()+':'+port+'/'+encodeURI(process.argv[2]); 
+    p2 = process.argv[2];
+    d = p2.lastIndexOf('/');
+    dir = p2.slice(0,d+1);
+    console.log('change dir to '+dir);
+    filename = p2.slice(d+1);
+
+    process.chdir(dir);
+    something = 'http://'+ip.address()+':'+port+'/'+encodeURI(filename); 
     createServer();
     qrcode.generate(something);
     console.log(something);
