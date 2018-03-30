@@ -14,7 +14,11 @@ function createServer(){
     http.createServer((req,res) => {
         res.writeHead(200);
 //        console.log(decodeURI(req.url));
-        res.end(fs.readFileSync('./' + decodeURI(req.url)));
+        try{
+            res.end(fs.readFileSync(process.cwd()+decodeURI(req.url)));
+        }catch(err){
+            console.log(err);
+        }
     }).listen(port)
 }
 
