@@ -29,7 +29,7 @@ if(process.argv[2]!=undefined){
     console.log('change dir to '+dir);
     filename = p2.slice(d+1);
 
-    process.chdir(dir);
+    if(dir) process.chdir(dir);
     something = 'http://'+ip.address()+':'+port+'/'+encodeURI(filename); 
     createServer();
     qrcode.generate(something);
