@@ -1,17 +1,24 @@
 const http = require('http');
 const detect = require('detect-port');
 
-function serverListen(port){
-  http.createServer((req,res) => {
-    res.writeHead(200);
-    console.log(decodeURI(req.url));
-    try{
-        const fs = require('fs');
-        res.end(fs.readFileSync(process.cwd()+decodeURI(req.url)));
-    }catch(err){
-        console.log(err);
-    }
-  }).listen(port)
+var server = http.createServer((req,res) => {
+  res.writeHead(200);
+  console.log(decodeURI(req.url));
+  try{
+      const fs = require('fs');
+      res.end(fs.readFileSync(process.cwd()+decodeURI(req.url)));
+  }catch(err){
+      console.log(err);
+  }
+})
+
+async function port_check(port){
+  if(port < 1 || port >65535){
+    console.log(`${port} is illegal .`)
+    process.exit();
+  }else{
+    return createServer(port)
+  }
 }
 
 async function createServer(port){
@@ -19,7 +26,7 @@ async function createServer(port){
     detect(port)
     .then(_port => {
       if (port == _port) {
-        serverListen(port)
+        server.listen(port)
         resolve(port);
       } else {
         console.log(`Port ${port} is occupied, try ${_port}.`)
@@ -30,5 +37,5 @@ async function createServer(port){
     });
   })
 }
-
-module.exports = createServer;
+exports.listen = port_check;
+exports.instance = server;

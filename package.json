@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha || exit 0",
+    "coverage": "nyc mocha || exit 0",
     "build": "babel src -d dist"
   },
   "author": "realdennis",
@@ -22,7 +23,8 @@
     "babel-cli": "^6.26.0",
     "babel-preset-es2017": "^6.24.1",
     "chai": "^4.1.2",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2"
   },
   "repository": {
     "type": "git",

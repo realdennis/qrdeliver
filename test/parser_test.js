@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var parser = require('../src/lib/parser');
+var parser = require('../dist/lib/parser');
 
 const ip = require('ip');
 let host = `http://${ip.address()}`; 
