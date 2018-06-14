@@ -3,7 +3,7 @@
   "version": "1.1.3",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha || exit 0",
     "build": "babel src -d dist"
   },
   "author": "realdennis",
@@ -19,7 +19,9 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-es2017": "^6.24.1"
+    "babel-preset-es2017": "^6.24.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
   },
   "repository": {
     "type": "git",
