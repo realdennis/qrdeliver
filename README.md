@@ -1,4 +1,6 @@
 # QRDELIVER
+[![Build Status](https://travis-ci.org/realdennis/qrdeliver.svg?branch=master)](https://travis-ci.org/realdennis/qrdeliver) [![Greenkeeper badge](https://badges.greenkeeper.io/realdennis/qrdeliver.svg)](https://greenkeeper.io/)
+
 Inspired by https://github.com/claudiodangelis/qr-filetransfer.
 
 # Description
