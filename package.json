@@ -3,20 +3,24 @@
   "version": "1.1.3",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist"
   },
   "author": "realdennis",
   "license": "MIT",
   "bin": {
-    "qrdeliver": "./index.js",
-    "qrd": "./index.js"
+    "qrdeliver": "./dist/index.js",
+    "qrd": "./dist/index.js"
   },
   "description": "Make your file be a QR code that mobile device can open/download it by scanning . ",
   "dependencies": {
     "ip": "^1.1.5",
     "qrcode-terminal": "^0.12.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2017": "^6.24.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/realdennis/qrdeliver.git"
