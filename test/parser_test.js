@@ -36,6 +36,27 @@ describe('Parser Test',()=>{
       expect(parser('./dist/lib/server.js',9999)).to.equal(`${host}:9999/server.js`);
     });
   });
+  describe('Only filename',()=>{
+    beforeEach(()=>{
+      process.stdout.write = ()=>{};
+      process.chdir(path);
+    });
+    afterEach(()=>{
+      delete process.stdout.write;
+    });
+    it('src',()=>{
+      expect(parser('./package.json',9999)).to.equal(`${host}:9999/package.json`);
+    });
+    it('src',()=>{
+      expect(parser('./README.md',9999)).to.equal(`${host}:9999/README.md`);
+    });
+    it('src',()=>{
+      expect(parser('package.json',9999)).to.equal(`${host}:9999/package.json`);
+    });
+    it('dist',()=>{
+      expect(parser('README.md',9999)).to.equal(`${host}:9999/README.md`);
+    });
+  });
   describe('file dir not exist',()=>{
     beforeEach(()=>{
       process.chdir(path);
