@@ -1,5 +1,26 @@
 let port_check = (() => {
   var _ref = _asyncToGenerator(function* (port) {
+    let createServer = (() => {
+      var _ref2 = _asyncToGenerator(function* (port) {
+        return new Promise(function (resolve, reject) {
+          detect(port).then(function (_port) {
+            if (port == _port) {
+              server.listen(port);
+              resolve(port);
+            } else {
+              console.log(`Port ${port} is occupied, try ${_port}.`);
+            }
+          }).catch(function (err) {
+            reject(err);
+          });
+        });
+      });
+
+      return function createServer(_x2) {
+        return _ref2.apply(this, arguments);
+      };
+    })();
+
     if (port < 1 || port > 65535) {
       console.log(`${port} is illegal .`);
       process.exit();
@@ -10,27 +31,6 @@ let port_check = (() => {
 
   return function port_check(_x) {
     return _ref.apply(this, arguments);
-  };
-})();
-
-let createServer = (() => {
-  var _ref2 = _asyncToGenerator(function* (port) {
-    return new Promise(function (resolve, reject) {
-      detect(port).then(function (_port) {
-        if (port == _port) {
-          server.listen(port);
-          resolve(port);
-        } else {
-          console.log(`Port ${port} is occupied, try ${_port}.`);
-        }
-      }).catch(function (err) {
-        reject(err);
-      });
-    });
-  });
-
-  return function createServer(_x2) {
-    return _ref2.apply(this, arguments);
   };
 })();
 

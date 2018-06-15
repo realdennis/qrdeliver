@@ -13,6 +13,22 @@ var server = http.createServer((req,res) => {
 })
 
 async function port_check(port){
+  async function createServer(port){
+    return new Promise((resolve,reject)=>{
+      detect(port)
+      .then(_port => {
+        if (port == _port) {
+          server.listen(port)
+          resolve(port);
+        } else {
+          console.log(`Port ${port} is occupied, try ${_port}.`)
+        }
+      })
+      .catch(err => {
+        reject(err);
+      });
+    })
+  }
   if(port < 1 || port >65535){
     console.log(`${port} is illegal .`)
     process.exit();
@@ -21,21 +37,5 @@ async function port_check(port){
   }
 }
 
-async function createServer(port){
-  return new Promise((resolve,reject)=>{
-    detect(port)
-    .then(_port => {
-      if (port == _port) {
-        server.listen(port)
-        resolve(port);
-      } else {
-        console.log(`Port ${port} is occupied, try ${_port}.`)
-      }
-    })
-    .catch(err => {
-      reject(err);
-    });
-  })
-}
 exports.listen = port_check;
 exports.instance = server;
