@@ -38,11 +38,9 @@ describe('Parser Test',()=>{
   });
   describe('file dir not exist',()=>{
     beforeEach(()=>{
-      process.stdout.write = ()=>{};
       process.chdir(path);
     });
     afterEach(()=>{
-      delete process.stdout.write;
     });
     it('not exist dir',()=>{
       expect(()=>parser('./foo/bar',9999)).not.to.throw();

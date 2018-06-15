@@ -2,6 +2,9 @@ var expect = require('chai').expect;
 var server = require('../dist/lib/server');
 
 describe('Server Test',()=>{
+  after(()=>{
+    server.instance.close();
+  });
   describe('Port occupied test',()=>{
     afterEach(()=>{
       server.instance.close();
