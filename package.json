@@ -15,7 +15,6 @@
   },
   "description": "Make your file be a QR code that mobile device can open/download it by scanning . ",
   "dependencies": {
-    "detect-port": "^1.2.3",
     "ip": "^1.1.5",
     "qrcode-terminal": "^0.12.0"
   },
