@@ -6,7 +6,7 @@ let port = 9615; //default port
 
 if (process.argv[3] === '-p') {
   port = Number(process.argv[4]);
-  if (Number.isNaN(port) || port < 1 || port > 65536) {
+  if (Number.isNaN(port) || port < 1 || port > 65535) {
     console.log('Illegal port number.');
     process.exit();
   }
