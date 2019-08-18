@@ -1,0 +1,5 @@
+{
+  "watch": ["src"],
+  "ext": "ts, js",
+  "exec": "yarn ts-node ./src/index.ts ./demo.png"
+}
