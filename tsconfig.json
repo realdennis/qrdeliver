@@ -1,14 +1,8 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "lib": ["es2017"],
-    "maxNodeModuleJsDepth": 5,
     "module": "commonjs",
-    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "sourceMap": true,
-    "strict": true,
-    "target": "esnext"
+    "sourceMap": true
   }
 }
