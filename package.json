@@ -5,7 +5,7 @@
   "scripts": {
     "test": "mocha || exit 0",
     "coverage": "nyc mocha || exit 0",
-    "build": "babel src -d dist"
+    "build": "parcel build src/index.js --target=node"
   },
   "author": "realdennis",
   "license": "MIT",
@@ -19,11 +19,11 @@
     "qrcode-terminal": "^0.12.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2017": "^6.24.1",
     "chai": "^4.1.2",
+    "mocha": "^6.0.0",
     "nyc": "^13.2.0",
-    "mocha": "^6.0.0"
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-shebang": "^1.2.8"
   },
   "repository": {
     "type": "git",
