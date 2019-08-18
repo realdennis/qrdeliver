@@ -3,12 +3,10 @@ os:
   - osx
   - linux
 node_js:
-  - 6
   - 8
   - 10.0
 script:
-  - npm run test
-
+  - yarn test
 notifications:
   email:
     on_success: never
