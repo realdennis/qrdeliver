@@ -7,6 +7,9 @@
     "coverage": "nyc mocha || exit 0",
     "build": "parcel build src/index.js --target=node"
   },
+  "files": [
+    "./dist"
+  ],
   "author": "realdennis",
   "license": "MIT",
   "bin": {
