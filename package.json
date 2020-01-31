@@ -6,7 +6,7 @@
     "dist/"
   ],
   "scripts": {
-    "test": "mocha -r ts-node/register test/*test*.ts || exit 0",
+    "test": "mocha -r ts-node/register src/test/*test*.ts || exit 0",
     "dev": "nodemon --watch",
     "coverage": "nyc mocha || exit 0",
     "build": "tsc",

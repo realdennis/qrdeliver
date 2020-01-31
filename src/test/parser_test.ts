@@ -37,15 +37,4 @@ describe('Parser Test', () => {
       );
     });
   });
-  describe('file dir not exist', () => {
-    beforeEach(() => {
-      process.chdir(path);
-    });
-    it('not exist dir', () => {
-      expect(() => parser('./foo/bar', 9999)).not.to.throw();
-    });
-    it('not exist dir', () => {
-      expect(() => parser('./asdjoasjdoiajsd/bar', 9999)).not.to.throw();
-    });
-  });
 });
