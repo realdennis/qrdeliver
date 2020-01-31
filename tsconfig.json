@@ -1,8 +1,25 @@
 {
   "compilerOptions": {
-    "allowJs": true,
+    "rootDir": "src/",
+    "outDir": "dist/",
+    "target": "ES5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "sourceMap": true
-  }
+    "lib": [
+      "es2017"
+    ],
+    "declaration": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/test"
+  ]
 }

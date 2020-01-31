@@ -1,16 +1,17 @@
 {
   "name": "qrdeliver",
   "version": "1.2.2-beta-v1",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "test": "mocha -r ts-node/register test/*test*.ts || exit 0",
     "dev": "nodemon --watch",
     "coverage": "nyc mocha || exit 0",
-    "build": "parcel build src/index.ts --target=node"
+    "build": "tsc",
+    "prepublishOnly": "rimraf dist/ && yarn build"
   },
-  "files": [
-    "./dist"
-  ],
   "author": "realdennis",
   "license": "MIT",
   "bin": {
@@ -24,14 +25,14 @@
   },
   "devDependencies": {
     "@types/chai": "^4.2.0",
+    "@types/ip": "^1.1.0",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.2",
     "chai": "^4.1.2",
     "mocha": "^6.0.0",
     "nodemon": "^2.0.0",
     "nyc": "^13.2.0",
-    "parcel-bundler": "^1.12.3",
-    "parcel-plugin-shebang": "^1.2.8",
+    "rimraf": "^3.0.1",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
   },

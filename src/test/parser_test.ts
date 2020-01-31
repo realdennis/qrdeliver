@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import parser from '../src/lib/parser';
+import parser from '../lib/parser';
 
 import * as ip from 'ip';
 let host = `http://${ip.address()}`;

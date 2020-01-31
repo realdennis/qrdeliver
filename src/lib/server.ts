@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-const http = require('http');
+import * as  http from 'http';
 const fileServer = http.createServer((req: any, res: any) => {
   res.writeHead(200);
   const url = req.url || '';
@@ -7,7 +7,7 @@ const fileServer = http.createServer((req: any, res: any) => {
     const file = fs.readFileSync(process.cwd() + decodeURI(url));
     res.end(file);
   } catch (err) {
-    url.includes('favicon') && console.log('Some error occuring...');
+    !url.includes('favicon') && console.log('Some error occuring...');
   }
 });
 export default fileServer;
